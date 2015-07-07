@@ -1,0 +1,153 @@
+CSS Code Snippets
+
+DIVI:
+
+Hide Navigation dropdowns except on mobile:
+
+/* HIDE SUB MENUS ARROW/CARROT on DESKTOP */
+#top-menu .menu-item-has-children > a:first-child, .fullwidth-menu .menu-item-has-children > a:first-child, #et-secondary-nav .menu-item-has-children > a:first-child {
+  padding-right: 0px;
+}
+#top-menu .menu-item-has-children > a:first-child:after, .fullwidth-menu .menu-item-has-children > a:first-child:after, #et-secondary-nav .menu-item-has-children > a:first-child:after {
+	display: none;
+	content: '';
+}
+/* HIDE SUB MENUS ON DESKTOP */
+@media only screen and (min-width: 981px) {
+	#main-header .nav li ul.sub-menu {display: none;}
+}
+/* HIDE WIDE FULLWIDTH MENU SECTION ON TABLET/MOBILE */
+@media only screen and (max-width: 980px) {
+	.et_pb_fullwidth_menu {display: none;}
+}
+
+
+
+Darken Video Backgrounds:
+
+
+.et_pb_section_video_bg:after {
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+
+custom button formatting:
+
+
+.custom_button { 
+	font-size: 20px; 
+	font-weight: 500; 
+	color:#990096;
+	-moz-border-radius: 3px; 
+	-webkit-border-radius: 3px; 
+	border-radius: 3px; 
+	padding: 6px 20px; 
+	line-height: 1.7em; 
+	background: #FFF; 
+	border: 2px solid; 
+	border-color:#FFF !important;
+	-webkit-font-smoothing: antialiased; 
+	-moz-osx-font-smoothing: grayscale; 
+	-moz-transition: all 0.2s; 
+	-webkit-transition: all 0.2s; 
+	transition: all 0.2s; 
+	position: relative;}
+
+
+.custom_button:hover { 
+	background: rgba( 255, 255, 255, 0.2 ); 
+	border: 2px solid transparent; 
+	padding: 6px 20px /*6px 14px*/ !important;
+	color:#FFF;}
+
+
+.custom_button:after{ 
+	font-size: 32px; 
+	line-height: 1em; 
+	/*content:"\35";   EDIT THIS TO SHOW > ON HOVER*/
+	opacity: 0; 
+	position: absolute; 
+	/*margin-left: -20px; EDIT THIS TO SHOW MORE TEXT ROOM FOR >*/
+	-moz-transition: all 0.2s;
+	-webkit-transition: all 0.2s; 
+	transition: all 0.2s; 
+	top: 7px; right: 5px; }
+
+.custom_button:hover:after{ 
+	opacity: 1; 
+	/*margin-left: 0; EDIT THIS TO SHOW MORE TEXT ROOM FOR >*/}
+
+
+.custom_button { display: inline-block; }
+.custom_button:hover{ text-decoration: none; }
+
+
+
+/* INSERT INTO HTML
+<a class="custom_button" href="link">BUTTON TEXT</a>
+*/
+
+
+
+/* remove column middle spacing*/
+/* /////////////////// */
+ 
+ .et_pb_column_1_2 {
+    margin: 0px;
+    overflow: hidden;
+    padding: 0px;
+}
+ 
+ .et_pb_column_1_3 {
+    margin: 0px;
+    overflow: hidden;
+    padding: 0px;
+}
+
+/* make divi foot stick to bottom +transparent*/
+#main-footer { background-color: transparent !important; bottom: 0; position: fixed; width: 100%; z-index: 999; }
+
+/* Make your slider text easier to ready by adding a smi-transparent background to the slider. Just add the following CSS to your Div child theme.*/
+.et_pb_bg_layout_dark .et_pb_slide_description{
+background-color: rgba(0, 0, 0, 0.5);
+display: inline-block;
+padding: 50px;
+margin: 100px;
+border-radius: 15px;
+}
+
+/* Add text shadow to slider titles in divi */
+.et_pb_slide_description h2 {color:#fff !important; text-shadow: 3px 2px 2px rgba(0,0,0,1); font-weight:200; }
+.et_pb_slide_description h3 {color:#fff !important; text-shadow: 1px 1px 1px rgba(0,0,0,1); font-weight:200;}
+
+/* remove box shadows from slider */
+.et_pb_slider .et_pb_slide{
+box–shadow: none;
+–moz–box–shadow: none;
+–webkit–box–shadow: none;}
+
+/* show slider text and button on mobile
+By default the slider text and button will NOTshow on mobiles. If you want to show your slider text and button on mobile in Divi using the following code in your ePanel or child themes style.css file. */
+
+@media only screen and (max-width: 767px) {
+.et_pb_slide_content, .et_pb_more_button, a.et_pb_more_button {
+display: block !important;
+}
+}
+
+/*if you also want to show the slider image, add;*/
+
+@media only screen and (max-width: 767px) {
+.et_pb_slide_image, .et_pb_slide_content, .et_pb_more_button, a.et_pb_more_button {
+display: block !important;
+}
+}
