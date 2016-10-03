@@ -1,0 +1,12 @@
+child theme functions.php 
+
+// Fix tabs in WooCommerce WC Vendors - Pro dashboard
+// -------------------------------------
+ 
+add_action( 'wcv_pro_before_dashboard', function() {
+  echo '<div class="et_smooth_scroll_disabled">';
+} );
+ 
+add_action( 'wcv_pro_after_dashboard', function() {
+  echo '</div>';
+} );
