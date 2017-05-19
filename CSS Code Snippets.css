@@ -3,7 +3,7 @@ CSS Code Snippets
 DIVI:
 
 Hide Sidebars
-/* HIDE SIDEBARS */
+/* Hide Sidebar vertical line */
 #main-content .container:before {background: none;}
 
 /*** Hide Sidebar ***/
