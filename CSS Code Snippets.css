@@ -2,8 +2,8 @@ CSS Code Snippets
 
 DIVI:
 
-Hide Sidebars
-/* Hide Sidebar vertical line */
+Hide Sidebars 
+/* Hide Sidebar vertical line * source: https://www.elegantthemes.com/blog/divi-resources/how-to-remove-sidebars-from-divi/
 #main-content .container:before {background: none;}
 
 /*** Hide Sidebar ***/
