@@ -2,6 +2,29 @@ CSS Code Snippets
 
 DIVI:
 
+Hide Sidebars
+/* HIDE SIDEBARS */
+#main-content .container:before {background: none;}
+
+/*** Hide Sidebar ***/
+#sidebar {display:none;}
+
+/*** Take out the divider line between content and sidebar ***/
+#main-content .container:before {background: none;}
+ 
+/*** Hide Sidebar ***/
+#sidebar {display:none;}
+ 
+/*** Expand the content area to fullwidth ***/
+@media (min-width: 981px){
+#left-area {
+    width: 100%;
+    padding: 23px 0px 0px !important;
+    float: none !important;
+}
+}
+
+
 Hide Navigation dropdowns except on mobile:
 
 /* HIDE SUB MENUS ARROW/CARROT on DESKTOP */
