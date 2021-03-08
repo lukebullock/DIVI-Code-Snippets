@@ -8,7 +8,8 @@ function get_switchboard_numbers(){
 ob_start();
 
 $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
-
+$odd_or_even = 'odd';
+	
 $switchboard_number = new WP_Query(array(
 	'post_type' => 'switchboard',
 	'post_status' => 'publish',
@@ -25,26 +26,33 @@ $switchboard_number = new WP_Query(array(
     ),
 ));
 
+
 if($switchboard_number -> have_posts()):
-    while($switchboard_number -> have_posts()): $switchboard_number -> the_post();?>
+    while($switchboard_number -> have_posts()): $switchboard_number -> the_post();?> 
+
+		
+
 		<div class="et_pb_column et_pb_column_4_4">
 			<div class="et_pb_module et_pb_text et_pb_text_align_left">
 				<div class="et_pb_text_inner">
 					<div class="switchboard-spacer">					
-						<div class="phone-row">
+						<div class="phone-row <?php echo $odd_or_even; ?>">
 							<div class="phone-col">
 								<span class="callout-text"><?php echo the_field('department');?>:</span>
 							</div> 
-							<div class="phone-col">
-								<?php echo the_field('phone_number');?><br>   
+							<div class="phone-col" style="text-align:right;">
+								<a href="tel:+1<?php echo the_field('phone_number');?>"><?php echo the_field('phone_number');?></a><br>   
 							</div>
 						</div>					
 					</div>	
                 </div>
             </div>
-        </div>					          		
-                            
-    <?php endwhile;
+        </div>					
+
+<?php
+        $odd_or_even = ($odd_or_even =="odd") ? 'even' : 'odd';
+
+    endwhile;
 endif;
 
 return ob_get_clean();
@@ -55,3 +63,5 @@ return ob_get_clean();
 /* ////////////////////////////////////////////////////////////////////////// */
 
 add_shortcode('switchboard-list', 'get_switchboard_numbers');
+
+/* END  Create Shortcode and Layout for Custom Post Type List */
