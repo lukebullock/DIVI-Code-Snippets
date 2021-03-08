@@ -1,6 +1,7 @@
 /* /////////////////////////////////////////////////////////////// */
 /* Create Shortcode and layout for Custom Post Type Loop */
 /* This goes in the functions.php for the theme or custom plugin */
+/* This also includes odd/even row class setting variables */
 /* /////////////////////////////////////////////////////////////// */
 
 function get_switchboard_numbers(){
