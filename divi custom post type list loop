@@ -31,8 +31,6 @@ $switchboard_number = new WP_Query(array(
 if($switchboard_number -> have_posts()):
     while($switchboard_number -> have_posts()): $switchboard_number -> the_post();?> 
 
-		
-
 		<div class="et_pb_column et_pb_column_4_4">
 			<div class="et_pb_module et_pb_text et_pb_text_align_left">
 				<div class="et_pb_text_inner">
@@ -46,9 +44,9 @@ if($switchboard_number -> have_posts()):
 							</div>
 						</div>					
 					</div>	
-                </div>
-            </div>
-        </div>					
+                		</div>
+           		</div>
+       		</div>					
 
 <?php
         $odd_or_even = ($odd_or_even =="odd") ? 'even' : 'odd';
